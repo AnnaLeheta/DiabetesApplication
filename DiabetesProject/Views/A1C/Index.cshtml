@@ -1,0 +1,51 @@
+﻿@model DiabetesProject.Models.A1CViewModel
+
+@{
+    ViewBag.Title = "Diabetes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>A1C</h2>
+
+<p>
+    @Html.ActionLink("Add A1C Test", "Create")
+</p>
+<div style="display: flex; justify-content: center;">
+    <img src="@Url.Action("Chart")" alt="Chart"/>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.A1c.First().User.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A1c.First().SugarConcentration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A1c.First().Date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.A1c)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SugarConcentration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.A1cID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.A1cID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.A1cID })
+            </td>
+        </tr>
+    }
+
+</table>

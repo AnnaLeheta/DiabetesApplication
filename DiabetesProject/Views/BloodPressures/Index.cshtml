@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DiabetesProject.Models.BloodPressure>
+
+@{
+    ViewBag.Title = "Diabetes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Blood Pressure</h2>
+
+<p>
+    @Html.ActionLink("Add Blood Pressure Test", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SystolicPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiastolicPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pulse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeasuredArm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SystolicPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiastolicPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pulse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeasuredArm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BloodPressureID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BloodPressureID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BloodPressureID })
+        </td>
+    </tr>
+}
+
+</table>

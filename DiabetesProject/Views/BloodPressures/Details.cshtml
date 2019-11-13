@@ -1,0 +1,67 @@
+﻿@model DiabetesProject.Models.BloodPressure
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BloodPressure</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystolicPressure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystolicPressure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiastolicPressure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiastolicPressure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pulse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pulse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasuredArm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasuredArm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BloodPressureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
